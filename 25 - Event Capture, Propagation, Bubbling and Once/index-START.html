@@ -43,6 +43,16 @@
 <button></button>
 <script>
 
+const divs = document.querySelectorAll('div');
+function logText(e){
+  console.log(this.classList.value);
+}
+
+divs.forEach(div => div.addEventListener('click', logText, {
+  capture: false,
+  once: true //run only once and then its like it "unbind" the Event Listener => it means that if it is a button, it can be only clicked once
+}));
+
 </script>
 </body>
 </html>
